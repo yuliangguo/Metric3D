@@ -37,6 +37,7 @@ def parse_args():
     parser.add_argument('--options', nargs='+', action=DictAction, help='custom options')
     parser.add_argument('--launcher', choices=['None', 'pytorch', 'slurm', 'mpi', 'ror'], default='slurm', help='job launcher')
     parser.add_argument('--test_data_path', default='None', type=str, help='the path of test data')
+    parser.add_argument('--save-interval', default=1, type=int, help='the interval of saving visualization results')
     args = parser.parse_args()
     return args
 
@@ -86,6 +87,8 @@ def main(args):
         cfg.distributed = True
         init_env(args.launcher, cfg)
     logger.info(f'Distributed training: {cfg.distributed}')
+    
+    cfg.save_interval = args.save_interval
     
     # dump config 
     cfg.dump(osp.join(cfg.show_dir, osp.basename(args.config)))
@@ -148,7 +151,8 @@ def main_worker(local_rank: int, cfg: dict, launcher: str, test_data: list):
         test_data,
         logger,
         cfg.distributed,
-        local_rank
+        local_rank,
+        save_interval=cfg.save_interval,
     )
     
 if __name__ == '__main__':

@@ -227,10 +227,10 @@ def do_scalecano_test_with_custom_data(
     logger: logging.RootLogger,
     is_distributed: bool = True,
     local_rank: int = 0,
+    save_interval = 1,
 ):
 
     show_dir = cfg.show_dir
-    save_interval = 1
     save_imgs_dir = show_dir + '/vis'
     os.makedirs(save_imgs_dir, exist_ok=True)
     save_pcd_dir = show_dir + '/pcd'
@@ -305,10 +305,10 @@ def do_scalecano_test_with_custom_data(
             #save_raw_imgs(pred_depth.detach().cpu().numpy(), rgb_torch, osp.join(an['folder'], an['filename']), save_imgs_dir, 1000.0)
 
             # pcd
-            pred_depth = pred_depth.detach().cpu().numpy()
-            #pcd = reconstruct_pcd(pred_depth, intrinsic[0], intrinsic[1], intrinsic[2], intrinsic[3])
-            #os.makedirs(osp.join(save_pcd_dir, an['folder']), exist_ok=True)
-            #save_point_cloud(pcd.reshape((-1, 3)), rgb_origin.reshape(-1, 3), osp.join(save_pcd_dir, an['folder'], an['filename'][:-4]+'.ply'))
+            # pred_depth = pred_depth.detach().cpu().numpy()
+            # pcd = reconstruct_pcd(pred_depth, intrinsic[0], intrinsic[1], intrinsic[2], intrinsic[3])
+            # os.makedirs(osp.join(save_pcd_dir, an['folder']), exist_ok=True)
+            # save_point_cloud(pcd.reshape((-1, 3)), rgb_origin.reshape(-1, 3), osp.join(save_pcd_dir, an['folder'], an['filename'][:-4]+'.ply'))
 
             if an['intrinsic'] == None:
                 #for r in [0.9, 1.0, 1.1]:
@@ -350,8 +350,8 @@ def do_scalecano_test_with_custom_data(
                                     )
 
 
-    #if gt_depth_flag:
-    if False:
+    if gt_depth_flag:
+    # if False:
         eval_error = dam.get_metrics()
         print('w/o match :', eval_error)
 

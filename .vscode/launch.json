@@ -1,0 +1,128 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: test kitti",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "mono/tools/test_scale_cano.py",
+            "console": "integratedTerminal",
+            "args": [
+                "mono/configs/HourglassDecoder/test_kitti_convlarge.0.3_150.py",
+                "--load-from",
+                "./weight/convlarge_hourglass_0.3_150_step750k_v1.1.pth",
+                "--test_data_path",
+                "./datasets/kitti_idisc/test_annotations_metric3d.json",
+                "--launcher",
+                "None",
+                "--show-dir",
+                "show_dirs/test_kitti_convlarge.0.3_150/full",
+                "--save-interval",
+                "20",
+            ]
+        },
+        {
+            "name": "Python Debugger: test kitti-360 fisheye",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "mono/tools/test_scale_cano.py",
+            "console": "integratedTerminal",
+            "args": [
+                "mono/configs/HourglassDecoder/test_kitti_convlarge.0.3_150.py",
+                "--load-from",
+                "./weight/convlarge_hourglass_0.3_150_step750k_v1.1.pth",
+                "--test_data_path",
+                "./datasets/KITTI-360/test_annotations_fisheye_metric3d.json",
+                "--launcher",
+                "None",
+                "--show-dir",
+                "show_dirs/test_kitti360_fisheye_convlarge.0.3_150/full",
+                "--save-interval",
+                "20",
+            ]
+        },
+        {
+            "name": "Python Debugger: test kitti-360 fisheye unidistort f700",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "mono/tools/test_scale_cano.py",
+            "console": "integratedTerminal",
+            "args": [
+                "mono/configs/HourglassDecoder/test_kitti_convlarge.0.3_150.py",
+                "--load-from",
+                "./weight/convlarge_hourglass_0.3_150_step750k_v1.1.pth",
+                "--test_data_path",
+                "./datasets/KITTI-360/test_annotations_fisheye_undistort_f700_metric3d.json",
+                "--launcher",
+                "None",
+                "--show-dir",
+                "show_dirs/test_kitti360_fisheye_unidistort_f700_convlarge.0.3_150/full",
+                "--save-interval",
+                "20",
+            ]
+        },
+        {
+            "name": "Python Debugger: test kitti-360 fisheye unidistort f350",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "mono/tools/test_scale_cano.py",
+            "console": "integratedTerminal",
+            "args": [
+                "mono/configs/HourglassDecoder/test_kitti_convlarge.0.3_150.py",
+                "--load-from",
+                "./weight/convlarge_hourglass_0.3_150_step750k_v1.1.pth",
+                "--test_data_path",
+                "./datasets/KITTI-360/test_annotations_fisheye_undistort_f350_metric3d.json",
+                "--launcher",
+                "None",
+                "--show-dir",
+                "show_dirs/test_kitti360_fisheye_unidistort_f350_convlarge.0.3_150/full",
+                "--save-interval",
+                "20",
+            ]
+        },
+        {
+            "name": "Python Debugger: test kitti-360 fisheye unidistort f175",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "mono/tools/test_scale_cano.py",
+            "console": "integratedTerminal",
+            "args": [
+                "mono/configs/HourglassDecoder/test_kitti_convlarge.0.3_150.py",
+                "--load-from",
+                "./weight/convlarge_hourglass_0.3_150_step750k_v1.1.pth",
+                "--test_data_path",
+                "./datasets/KITTI-360/test_annotations_fisheye_undistort_f175_metric3d.json",
+                "--launcher",
+                "None",
+                "--show-dir",
+                "show_dirs/test_kitti360_fisheye_unidistort_f175_convlarge.0.3_150/full",
+                "--save-interval",
+                "20",
+            ]
+        },
+        {
+            "name": "Python Debugger: test kitti-360 fisheye erp",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "mono/tools/test_scale_cano.py",
+            "console": "integratedTerminal",
+            "args": [
+                "mono/configs/HourglassDecoder/test_kitti_convlarge.0.3_150.py",
+                "--load-from",
+                "./weight/convlarge_hourglass_0.3_150_step750k_v1.1.pth",
+                "--test_data_path",
+                "./datasets/KITTI-360/test_annotations_fisheye_erp_metric3d.json",
+                "--launcher",
+                "None",
+                "--show-dir",
+                "show_dirs/test_kitti360_fisheye_erp_convlarge.0.3_150/full",
+                "--save-interval",
+                "20",
+            ]
+        },
+    ]
+}
