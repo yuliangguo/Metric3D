@@ -127,7 +127,7 @@ if __name__=='__main__':
             depth_path = osp.join(data_root, line.strip().split(" ")[1])
 
             # ERP suppose to have no focal length
-            cam_in = [700, 700, 700, 700]
+            cam_in = [445.63, 445.63, 700, 700]
             
             depth_scale = 256.
             meta_data = {}
